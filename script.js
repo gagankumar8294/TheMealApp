@@ -7,7 +7,7 @@ var fav = [];
 // GENERATING 10 RANDOM MEALS - DISPLAY
 async function meals() {
   for (let i = 0; i < 12; i++) {
-    var meal = await fetch('https:www.themealdb.com/api/json/v1/1/random.php')
+    var meal = await fetch('https://www.themealdb.com/api.php')
     var meallist = await meal.json();
     var ok = meallist.meals[0];
     arr.push(ok);
@@ -130,7 +130,7 @@ searchBtn.addEventListener('click', function () {
 })
 
 async function searchMEAL(text) {
-  let searchedMeal = await fetch(`https:www.themealdb.com/api/json/v1/1/search.php?s=${text}`);
+  let searchedMeal = await fetch(`https://www.themealdb.com/api.php?s=${text}`);
   let resultSearchedMeal = await searchedMeal.json();
   if (resultSearchedMeal.meals != null) {
     let serObj = resultSearchedMeal.meals[0];
@@ -211,10 +211,10 @@ async function fetchAPI(text) {
   let list = document.getElementById('suggestionList');
   let q;
   if (text.length === 1) {
-    q = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${text}`)
+    q = await fetch(`https://www.themealdb.com/api.php?f=${text}`)
   }
   else {
-    q = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${text}`)
+    q = await fetch(`https://www.themealdb.com/api.php?s=${text}`)
   }
   let object = await q.json();
   if (object != null) {
