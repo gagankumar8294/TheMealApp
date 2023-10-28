@@ -1,3 +1,6 @@
+var meal = await fetch('/api/randomMeal');
+
+
 var arr = [];
 var fav = [];
 
